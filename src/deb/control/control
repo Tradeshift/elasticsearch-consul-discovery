@@ -1,0 +1,14 @@
+Source: elasticsearch-consul-discovery
+Section: java
+Priority: extra
+Version: [[version]]
+Maintainer: Konatsntin Tushakov <ktu@tradeshift.com>
+Homepage: https://github.com/Tradeshift/elasticsearch-consul-discovery
+Vcs-Git: git@github.com:Tradeshift/elasticsearch-consul-discovery.git
+Vcs-Browser: https://github.com/Tradeshift/elasticsearch-consul-discovery
+Package: elasticsearch-consul-discovery
+Architecture: all
+Conflicts:
+Replaces:
+Description: [[description]]
+Depends: elasticsearch (= 2.2.0)
