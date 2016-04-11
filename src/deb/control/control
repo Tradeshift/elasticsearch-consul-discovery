@@ -11,4 +11,4 @@ Architecture: all
 Conflicts:
 Replaces:
 Description: [[description]]
-Depends: elasticsearch (= 2.2.0)
+Depends: elasticsearch (= 2.2.1)
