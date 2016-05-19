@@ -42,3 +42,18 @@ Key|Example|Description
 
 This plugin is based on https://github.com/grantr/elasticsearch-srv-discovery and
 modified to be based on consul API calls instead of DNS records.
+
+
+#Build Debian Package
+
+The deb package for plugin can be build using a command:
+
+```
+mvn clean install
+
+```
+dependency for build: java v.1.8
+
+work with elasticsearch 2.2.2
+
+Note: this plugin work properly only if a jvm has permission = java.security.AllPermission.

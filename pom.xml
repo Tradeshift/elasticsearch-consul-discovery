@@ -6,7 +6,7 @@
 
     <groupId>org.elasticsearch</groupId>
     <artifactId>elasticsearch-consul-discovery</artifactId>
-    <version>2.0-SNAPSHOT</version>
+    <version>2.2.2-1</version>
     <packaging>jar</packaging>
     <name>Elasticsearch Consul discovery plugin</name>
     <description>The Consul discovery plugin queries consul APIs for unicast
@@ -30,7 +30,7 @@
     </scm>
 
     <properties>
-        <elasticsearch.version>2.1.1</elasticsearch.version>
+        <elasticsearch.version>2.2.2</elasticsearch.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -102,6 +102,76 @@
                         </mapping>
                     </mappings>
                 </configuration>
+            </plugin>
+            <plugin>
+                <!-- Build Debian (.deb) package -->
+                <!-- Documentation: https://github.com/tcurdt/jdeb/blob/master/docs/maven.md -->
+                <artifactId>jdeb</artifactId>
+                <groupId>org.vafer</groupId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jdeb</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Name of debian package -->
+                            <deb>${project.basedir}/${project.artifactId}-${project.version}.deb</deb>
+                            <verbose>true</verbose>
+                            <snapshotExpand>true</snapshotExpand>
+                            <!-- expand "SNAPSHOT" to what is in the "USER" env variable -->
+                            <snapshotEnv>USER</snapshotEnv>
+                            <verbose>true</verbose>
+                            <controlDir>src/deb/control</controlDir>
+                            <dataSet>
+                                <data>
+                                    <type>file</type>
+                                    <src>
+                                        ${project.build.directory}/elasticsearch-consul-discovery-${project.version}.jar
+                                    </src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/usr/share/elasticsearch/plugins/consul-discovery</prefix>
+                                        <user>root</user>
+                                        <group>root</group>
+                                        <dirmode>755</dirmode>
+                                        <filemode>644</filemode>
+                                    </mapper>
+                                </data>
+
+                                <data>
+                                    <type>file</type>
+                                    <src>
+                                        ${basedir}/gson-2.3.1.jar
+                                    </src>
+                                    <mapper>
+                                        <type>perm</type>
+                                        <prefix>/usr/share/elasticsearch/plugins/consul-discovery</prefix>
+                                        <user>root</user>
+                                        <group>root</group>
+                                        <dirmode>755</dirmode>
+                                        <filemode>644</filemode>
+                                    </mapper>
+                                 </data>
+                                 <data>
+                                     <type>file</type>
+                                     <src>
+                                         ${basedir}/plugin-descriptor.properties
+                                     </src>
+                                     <mapper>
+                                         <type>perm</type>
+                                         <prefix>/usr/share/elasticsearch/plugins/consul-discovery</prefix>
+                                         <user>root</user>
+                                         <group>root</group>
+                                         <dirmode>755</dirmode>
+                                         <filemode>644</filemode>
+                                     </mapper>
+                                 </data>
+                            </dataSet>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
