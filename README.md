@@ -54,6 +54,6 @@ mvn clean install
 ```
 dependency for build: java v.1.8
 
-work with elasticsearch 2.4.0
+work with elasticsearch 2.4.1
 
 Note: this plugin work properly only if a jvm has permission = java.security.AllPermission.
