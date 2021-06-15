@@ -1,0 +1,19 @@
+
+# catalog-info.yml
+# This file contains metadata for backstage
+# Read more about available fields and annotations:
+# https://github.com/tradeshift/backstage
+#
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: elasticsearch-consul-discovery
+  description: |
+    Consul based node discovery plugin for elasticsearch
+  annotations:
+    github.com/project-slug: Tradeshift/elasticsearch-consul-discovery # GitHub project name
+
+spec:
+  type: other
+  owner: platform-ops
+  lifecycle: experimental
