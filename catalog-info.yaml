@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: elasticsearch-consul-discovery
+  annotations:
+    github.com/project-slug: Tradeshift/elasticsearch-consul-discovery
+spec:
+  type: other
+  lifecycle: unknown
+  owner: platform-ops
