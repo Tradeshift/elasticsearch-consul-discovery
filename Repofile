@@ -1,8 +1,12 @@
 {
-  "description": "Set of helper tools for Elastic Search Consul Discovery in Tradeshift Platform",
-  "enableIssues": true,
-  "enableWiki": false,
-  "enableProjects": true,
-  "extraProtectedBranches": ["testing"],
-  "maintainers": ["Platform Ops"]
+    "description": "Set of helper tools for Elastic Search Consul Discovery in Tradeshift Platform",
+    "enableIssues": true,
+    "enableWiki": false,
+    "enableProjects": true,
+    "extraProtectedBranches": [
+        "testing"
+    ],
+    "maintainers": [
+        "platform-ops"
+    ]
 }
