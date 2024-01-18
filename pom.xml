@@ -82,7 +82,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>rpm-maven-plugin</artifactId>
-                <version>2.1.4</version>
+                <version>2.3.0</version>
                 <configuration>
                     <prefix>/usr/local</prefix>
                     <group>Development/Tools</group>
