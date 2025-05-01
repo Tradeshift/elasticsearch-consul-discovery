@@ -30,7 +30,7 @@
     </scm>
 
     <properties>
-        <elasticsearch.version>6.8.17</elasticsearch.version>
+        <elasticsearch.version>7.17.23</elasticsearch.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
